@@ -5,7 +5,7 @@
   "scripts": {
     "build": "tsc --project tsconfig.json",
     "start": "node dist/main.js",
-    "dev": "tsx src/main.ts",
+    "dev": "ts-node --swc src/main.ts",
     "test": "vitest run --coverage",
     "lint": "tsc --noEmit"
   },
@@ -26,6 +26,8 @@
     "socket.io": "^4.8.3"
   },
   "devDependencies": {
+    "@swc/core": "^1.15.41",
+    "@swc/helpers": "^0.5.23",
     "@types/express": "^4.17.21",
     "@types/node": "^20.0.0",
     "@types/socket.io": "^3.0.1",

@@ -2,8 +2,8 @@ import { Injectable, NotFoundException, BadRequestException, Optional } from '@n
 import { GameEngine, EventBus } from '@lobos/game-engine';
 import { ActionType, TeamType, EventType } from '@lobos/game-engine';
 import type { GameState } from '@lobos/game-engine';
-import { CreateGameDto, QueueActionDto, CastVoteDto } from './game.dto.js';
-import { GameGateway } from '../websocket/game.gateway.js';
+import { CreateGameDto, QueueActionDto, CastVoteDto } from './game.dto';
+import { GameGateway } from '../websocket/game.gateway';
 
 @Injectable()
 export class GameService {

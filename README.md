@@ -56,20 +56,32 @@ const result = await narrator.narrateAsync(event, state);
 ## Getting started
 
 ```bash
-# Install dependencies
+# 1. Install dependencies
 npm install
 
-# Run all tests
-npm test
+# 2. Build the shared packages (required before running the API)
+cd packages/game-engine   && npx tsc && cd ../..
+cd packages/rules-engine  && npx tsc && cd ../..
+cd packages/balance-engine && npx tsc && cd ../..
+cd packages/narrator-engine && npx tsc && cd ../..
 
-# Start the API (port 3001)
-cd apps/api && npm run start:dev
+# 3. (Optional) Enable the AI narrator
+export ANTHROPIC_API_KEY=sk-ant-...
 
-# Start the frontend (port 3000)
+# 4. Start the API — Terminal 1 (port 3000)
+cd apps/api && npm run dev
+
+# 5. Start the frontend — Terminal 2 (port 3001 or next available)
 cd apps/web && npm run dev
 ```
 
-Set `ANTHROPIC_API_KEY` in your environment to enable the AI narrator.
+Run all tests (no build needed — Vitest resolves TypeScript sources directly):
+
+```bash
+cd packages/game-engine    && npm test
+cd packages/narrator-engine && npm test
+cd apps/api                && npm test
+```
 
 ## REST API
 

@@ -1,6 +1,8 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "module": "CommonJS",
+    "moduleResolution": "node",
     "outDir": "dist",
     "types": ["node"],
     "experimentalDecorators": true,
@@ -11,6 +13,9 @@
       "@lobos/balance-engine": ["../../packages/balance-engine/src/index.ts"],
       "@lobos/narrator-engine": ["../../packages/narrator-engine/src/index.ts"]
     }
+  },
+  "ts-node": {
+    "preferTsExts": true
   },
   "include": [
     "src/**/*",
