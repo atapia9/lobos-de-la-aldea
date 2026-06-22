@@ -1,0 +1,26 @@
+{
+  "DAY_STARTED": [
+    "El día {dayNumber} comienza. Los aldeanos se reúnen en la plaza para deliberar.",
+    "Con la luz del sol, los aldeanos buscan al traidor entre ellos.",
+    "Amanecer del día {dayNumber}. Tiempo de hablar, acusar... y votar.",
+    "La aldea despierta. ¿Quién entre ellos oculta colmillos afilados?"
+  ],
+  "VOTE_CAST": [
+    "{voterName} señala a {targetName} con un dedo acusador.",
+    "El voto de {voterName} recae sobre {targetName}.",
+    "{voterName} no duda: su voto es para {targetName}.",
+    "Con voz firme, {voterName} pronuncia el nombre de {targetName}."
+  ],
+  "PLAYER_EXECUTED": [
+    "La aldea ha decidido: {playerName} es expulsado. Era {roleDisplay}.",
+    "{playerName} es llevado al patíbulo. Su rol era el de {roleDisplay}.",
+    "El juicio popular condena a {playerName}. Resulta ser {roleDisplay}.",
+    "Entre gritos y acusaciones, {playerName} es ejecutado. Era {roleDisplay}."
+  ],
+  "TIE_NO_EXECUTION": [
+    "Los votos están divididos. La aldea no llega a un acuerdo hoy.",
+    "Empate. La incertidumbre reina en la plaza. Nadie será ejecutado.",
+    "La división entre los aldeanos salva a todos... por ahora.",
+    "Sin mayoría, la ejecución queda suspendida hasta mañana."
+  ]
+}

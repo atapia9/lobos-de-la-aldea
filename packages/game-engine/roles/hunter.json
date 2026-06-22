@@ -1,0 +1,18 @@
+{
+  "id": "hunter",
+  "team": "VILLAGE",
+  "displayName": "Cazador",
+  "loreDescription": "Al morir, puede disparar a un jugador de su elección.",
+  "nightAction": false,
+  "priority": 9,
+  "rarity": "UNCOMMON",
+  "difficulty": 3,
+  "triggers": [
+    {
+      "on": "ON_DEATH",
+      "action": "ATTACK",
+      "target": "ACTOR_CHOICE",
+      "priority": 9
+    }
+  ]
+}

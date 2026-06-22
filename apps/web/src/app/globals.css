@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0f0f1a;
+  --fg: #e8e0d0;
+  --accent: #d4a853;
+  --wolf: #8b1a1a;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Georgia', serif;
+}

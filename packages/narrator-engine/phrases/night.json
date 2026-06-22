@@ -1,0 +1,20 @@
+{
+  "NIGHT_STARTED": [
+    "La oscuridad cae sobre la aldea. Los vecinos cierran sus puertas con miedo.",
+    "La luna llena ilumina el pueblo. Es hora de que los lobos despierten.",
+    "El silencio se apodera de las calles. Algo acecha en las sombras.",
+    "Noche {dayNumber}. La aldea contiene la respiración."
+  ],
+  "PLAYER_KILLED": [
+    "A la mañana siguiente, encuentran el cuerpo de {playerName}. La aldea llora su pérdida.",
+    "{playerName} no sobrevivió la noche. Los lobos hicieron su trabajo.",
+    "Un grito rasga el amanecer. {playerName} ha caído víctima de las garras de los lobos.",
+    "El alba revela la tragedia: {playerName} fue devorado durante la noche."
+  ],
+  "PLAYER_PROTECTED": [
+    "{playerName} estuvo en peligro anoche, pero una mano invisible lo protegió.",
+    "Los lobos atacaron a {playerName}, pero alguien veló por su seguridad.",
+    "Milagrosamente, {playerName} sobrevivió el ataque de esta noche.",
+    "Una fuerza protectora salvó a {playerName} de las garras del mal."
+  ]
+}

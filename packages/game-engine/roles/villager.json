@@ -1,0 +1,11 @@
+{
+  "id": "villager",
+  "team": "VILLAGE",
+  "displayName": "Aldeano",
+  "loreDescription": "Un aldeano común que busca erradicar a los hombres lobo.",
+  "nightAction": false,
+  "priority": 10,
+  "rarity": "COMMON",
+  "difficulty": 1,
+  "triggers": []
+}

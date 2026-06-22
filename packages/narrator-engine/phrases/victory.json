@@ -1,0 +1,20 @@
+{
+  "VILLAGE_WINS": [
+    "¡La aldea triunfa! Los hombres lobo han sido eliminados. La paz regresa.",
+    "¡Victoria para los aldeanos! El último lobo ha caído. Pueden dormir en paz.",
+    "La pesadilla terminó. La aldea celebra su victoria sobre las bestias.",
+    "Justicia para la aldea. Los lobos fueron vencidos gracias a la unidad del pueblo."
+  ],
+  "WEREWOLF_WINS": [
+    "Los lobos emergen victoriosos. La aldea ha caído bajo su dominio.",
+    "Las bestias han ganado. La oscuridad se adueña del pueblo para siempre.",
+    "La aldea sucumbe. Los hombres lobo aullan su victoria bajo la luna llena.",
+    "El miedo gana. Los lobos son demasiados y los aldeanos demasiado pocos."
+  ],
+  "JESTER_WINS": [
+    "¡El Bufón ríe el último! Fue ejecutado exactamente como lo planeó.",
+    "¡Sorpresa! {playerName} era el Bufón y ganó al ser ejecutado por la aldea.",
+    "La cruel ironía: la aldea ejecutó al Bufón. ¡Él era quien quería morir!",
+    "El Bufón hace su última reverencia. Engañó a todos... y ganó."
+  ]
+}

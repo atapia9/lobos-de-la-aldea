@@ -1,0 +1,11 @@
+{
+  "id": "seer",
+  "team": "VILLAGE",
+  "displayName": "Vidente",
+  "loreDescription": "Puede ver la verdadera naturaleza de cualquier aldeano.",
+  "nightAction": true,
+  "priority": 3,
+  "rarity": "UNCOMMON",
+  "difficulty": 2,
+  "triggers": []
+}

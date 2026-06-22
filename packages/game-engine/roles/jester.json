@@ -1,0 +1,11 @@
+{
+  "id": "jester",
+  "team": "NEUTRAL",
+  "displayName": "Bufón",
+  "loreDescription": "Solo gana si es ejecutado por votación de los aldeanos.",
+  "nightAction": false,
+  "priority": 10,
+  "rarity": "RARE",
+  "difficulty": 4,
+  "triggers": []
+}

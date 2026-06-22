@@ -1,0 +1,14 @@
+{
+  "VILLAGE": {
+    "displayName": "Aldeanos",
+    "victoryCondition": "eliminate_all_werewolves"
+  },
+  "WEREWOLF": {
+    "displayName": "Hombres Lobo",
+    "victoryCondition": "outnumber_villagers"
+  },
+  "NEUTRAL": {
+    "displayName": "Neutrales",
+    "victoryCondition": "role_specific"
+  }
+}

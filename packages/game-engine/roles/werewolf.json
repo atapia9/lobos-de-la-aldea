@@ -1,0 +1,11 @@
+{
+  "id": "werewolf",
+  "team": "WEREWOLF",
+  "displayName": "Hombre Lobo",
+  "loreDescription": "Se oculta entre los aldeanos y ataca de noche.",
+  "nightAction": true,
+  "priority": 7,
+  "rarity": "COMMON",
+  "difficulty": 2,
+  "triggers": []
+}

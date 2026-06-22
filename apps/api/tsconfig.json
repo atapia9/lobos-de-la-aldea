@@ -1,0 +1,23 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "types": ["node"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "paths": {
+      "@lobos/game-engine": ["../../packages/game-engine/src/index.ts"],
+      "@lobos/rules-engine": ["../../packages/rules-engine/src/index.ts"],
+      "@lobos/balance-engine": ["../../packages/balance-engine/src/index.ts"],
+      "@lobos/narrator-engine": ["../../packages/narrator-engine/src/index.ts"]
+    }
+  },
+  "include": [
+    "src/**/*",
+    "test/**/*",
+    "../../packages/game-engine/src/**/*",
+    "../../packages/rules-engine/src/**/*",
+    "../../packages/balance-engine/src/**/*",
+    "../../packages/narrator-engine/src/**/*"
+  ]
+}

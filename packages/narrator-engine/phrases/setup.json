@@ -1,0 +1,14 @@
+{
+  "GAME_CREATED": [
+    "Una nueva partida comienza en la aldea. {playerCount} almas, secretos ocultos.",
+    "Los dados están echados. {playerCount} jugadores, roles asignados, destinos sellados.",
+    "Bienvenidos a la aldea. {playerCount} vecinos, uno de ellos... no es lo que parece.",
+    "Que comience el juego. {playerCount} participantes. Solo uno ganará."
+  ],
+  "ROLE_ASSIGNED": [
+    "Tu destino ha sido sellado en las sombras.",
+    "El rol que cargarás esta noche ha sido decidido.",
+    "Conoce tu verdadero ser. Guarda tu secreto bien.",
+    "La aldea necesita tanto héroes como villanos."
+  ]
+}

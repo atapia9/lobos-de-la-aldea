@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "types": ["node"],
+    "paths": {
+      "@lobos/game-engine": ["../game-engine/src/index.ts"],
+      "@lobos/rules-engine": ["../rules-engine/src/index.ts"]
+    }
+  },
+  "include": ["src/**/*", "../game-engine/src/**/*", "../rules-engine/src/**/*"]
+}
