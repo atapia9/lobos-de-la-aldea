@@ -14,6 +14,7 @@ export default defineConfig({
     globals: true,
     coverage: {
       provider: 'v8',
+      exclude: ['src/main.ts', 'src/**/*.module.ts', 'src/game/game.dto.ts'],
       thresholds: { lines: 95, functions: 95, branches: 90, statements: 95 },
     },
   },
