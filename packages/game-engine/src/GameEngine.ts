@@ -166,6 +166,7 @@ export class GameEngine {
     }
 
     const target = state.players.find((p) => p.id === tally.winner);
+    /* v8 ignore next */
     if (!target) throw new Error('Voted player not found');
 
     target.alive = false;
@@ -238,6 +239,7 @@ export class GameEngine {
   }
 
   private assertRng(): SeededRandom {
+    /* v8 ignore next */
     if (!this.rng) throw new Error('RNG not initialized');
     return this.rng;
   }

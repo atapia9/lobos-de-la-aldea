@@ -59,6 +59,13 @@ describe('GameEngine — startGame', () => {
     const engine = new GameEngine();
     expect(() => engine.startNight()).toThrow();
   });
+
+  it('uses Date.now as seed when none provided', () => {
+    const engine = new GameEngine();
+    const state = engine.startGame({ playerNames: PLAYER_NAMES });
+    expect(typeof state.seed).toBe('number');
+    expect(state.seed).toBeGreaterThan(0);
+  });
 });
 
 describe('GameEngine — night phase', () => {
@@ -195,6 +202,31 @@ describe('GameEngine — voting phase', () => {
     // Sanity: enum values are distinct strings
     expect(EventType.PLAYER_EXECUTED).not.toBe(EventType.PLAYER_KILLED);
   });
+
+  it('vote throws when voter id does not exist', () => {
+    const engine = new GameEngine();
+    const state = engine.startGame({ playerNames: PLAYER_NAMES, seed: FIXED_SEED });
+    engine.startNight();
+    engine.resolveNight();
+    engine.startDay();
+    engine.startVoting();
+    expect(() => engine.vote('nonexistent', state.players[0].id)).toThrow();
+  });
+
+  it('vote throws when voter is dead', () => {
+    const engine = new GameEngine();
+    const roleIds = ['werewolf', 'villager', 'villager', 'villager', 'villager'];
+    const state = engine.startGame({ playerNames: PLAYER_NAMES, seed: FIXED_SEED, roleIds });
+    engine.startNight();
+    const wolf = state.players.find((p) => p.role.id === 'werewolf')!;
+    const victim = state.players.find((p) => p.id !== wolf.id)!;
+    engine.queueAction({ actorId: wolf.id, targetId: victim.id, actionType: ActionType.ATTACK, priority: 7 });
+    engine.resolveNight();
+    engine.startDay();
+    engine.startVoting();
+    // victim is dead — should throw
+    expect(() => engine.vote(victim.id, wolf.id)).toThrow('Only alive players can vote');
+  });
 });
 
 describe('GameEngine — victory conditions', () => {
@@ -228,5 +260,30 @@ describe('GameEngine — victory conditions', () => {
     const state = engine.endGame(TeamType.WEREWOLF);
     expect(state.winner).toBe(TeamType.WEREWOLF);
     expect(handler).toHaveBeenCalledOnce();
+  });
+
+  it('resolveNight triggers GAME_ENDED when werewolf kills last villager', () => {
+    const bus = new EventBus();
+    const endedHandler = vi.fn();
+    bus.subscribe(EventType.GAME_ENDED, endedHandler);
+    const engine = new GameEngine(bus);
+    // 2 players: wolf vs villager — wolf attacks villager → wolves outnumber → game over
+    const roleIds = ['werewolf', 'villager'];
+    const state = engine.startGame({ playerNames: ['Wolf', 'Vil'], seed: 1, roleIds });
+    engine.startNight();
+    const wolf = state.players.find((p) => p.role.id === 'werewolf')!;
+    const villager = state.players.find((p) => p.role.id === 'villager')!;
+    engine.queueAction({ actorId: wolf.id, targetId: villager.id, actionType: ActionType.ATTACK, priority: 7 });
+    engine.resolveNight();
+    expect(endedHandler).toHaveBeenCalledOnce();
+    expect(state.phase).toBe(PhaseType.GAME_OVER);
+  });
+
+  it('getState returns current game state', () => {
+    const engine = new GameEngine();
+    const created = engine.startGame({ playerNames: PLAYER_NAMES, seed: FIXED_SEED });
+    const fetched = engine.getState();
+    expect(fetched.id).toBe(created.id);
+    expect(fetched.phase).toBe(PhaseType.SETUP);
   });
 });
